@@ -124,7 +124,7 @@ public class MainInterface extends JFrame implements ListenerModel {
 
     @Override
     public void modeleMisAJour(Object source) {
-        this.game.getQuadTree().update(this.game.getGrid());
+        this.game.gridChanged();
 		this.gridInterface.repaint();
 	}
 }

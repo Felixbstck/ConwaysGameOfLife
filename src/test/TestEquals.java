@@ -8,8 +8,8 @@ public class TestEquals {
 
         boolean ok = true;
 
-        Node a = new Node(0,0,0,0);
-        Node b = new Node(0,0,0,0);
+        Node a = Node.leaf(0,0,0,0);
+        Node b = Node.leaf(0,0,0,0);
 
         ok = ok && a.equals(b);
         System.out.println(ok ? "No errors Detected within the Grid Class" : "Errors detected");

@@ -28,18 +28,11 @@ public class GameThread extends Thread {
                 Thread.sleep(this.game.getStepDelay());
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                return;
             }
             if (this.isRunning) {
                 // Executes this code if play button has been pressed
-                if (this.game.getUseHashlife()) {
-                    Node newTree = this.game.quadTree.evolve();
-                    Grid newGrid = new Grid(newTree);
-                    this.game.quadTree = newTree;
-                    this.game.grid.setGrid(newGrid);
-                } else {
-                    // Brute-force algorithm
-                    this.game.grid.nextStep();
-                }
+                this.game.step();
             }
         }  
     }

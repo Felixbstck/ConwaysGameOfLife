@@ -33,7 +33,7 @@ public class Grid extends AbstractListenableModel {
 
     public Grid(Node quadTree) {
         // Construct a grid from a quadTree
-        this((int) Math.pow(2, quadTree.getLevel()));
+        this((int) Math.pow(2, quadTree.level));
         this.convertQuadTree(quadTree, 0, 0);
     }
 
@@ -56,9 +56,9 @@ public class Grid extends AbstractListenableModel {
         } else {
             // Recursively calls itself with adjusted coordinates
             convertQuadTree(quadTree.nw, x, y);
-            convertQuadTree(quadTree.ne, (int) (x + Math.pow(2, quadTree.getLevel()-1)), y);
-            convertQuadTree(quadTree.sw, x, (int) (y + Math.pow(2, quadTree.getLevel()-1)));
-            convertQuadTree(quadTree.se, (int) (x + Math.pow(2, quadTree.getLevel()-1)), (int) (y + Math.pow(2, quadTree.getLevel()-1)));
+            convertQuadTree(quadTree.ne, (int) (x + Math.pow(2, quadTree.level-1)), y);
+            convertQuadTree(quadTree.sw, x, (int) (y + Math.pow(2, quadTree.level-1)));
+            convertQuadTree(quadTree.se, (int) (x + Math.pow(2, quadTree.level-1)), (int) (y + Math.pow(2, quadTree.level-1)));
         }
      }
 
